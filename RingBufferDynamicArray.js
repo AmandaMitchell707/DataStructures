@@ -30,6 +30,7 @@ class RingBufferDynamicArray {
   set(value, index) {
     if (index >= this.capacity) {
       this.resize();
+      this.set(value, index);
     }
 
     const location = (this.startingIndex + index) % this.capacity;
